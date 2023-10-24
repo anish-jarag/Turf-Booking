@@ -1,7 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:turf_booking/admin_login.dart';
+import 'package:turf_booking/firebase_options.dart';
 import 'package:turf_booking/landing_screen.dart';
 
 void main() {
+  _initializeFirebase();
   runApp(const MyApp());
 }
 
@@ -16,8 +20,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const LandingScreen() 
+      home:AdminLoginScreen() 
     );
   }
 }
 
+_initializeFirebase() async {
+
+await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+}
