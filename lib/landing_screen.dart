@@ -171,7 +171,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   width: 400,
                   height: 60,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>  adminLoginScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>  AdminLoginScreen()));
                   },  style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white, backgroundColor: const Color(0xff1cbe97),
                     elevation: 4, 
@@ -204,7 +204,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   width: 400,
                   height: 60,
                   child: ElevatedButton(onPressed: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (_)=>  adminLoginScreen()));
+                       Navigator.push(context, MaterialPageRoute(builder: (_)=>  AdminLoginScreen()));
                   },  style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white, backgroundColor: const Color(0xff1cbe97),
                     elevation: 4, 

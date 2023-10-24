@@ -1,17 +1,74 @@
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:turf_booking/api/apis.dart';
+import 'package:turf_booking/dialouges/dialogs.dart';
 import 'package:turf_booking/home_screen.dart';
 import 'package:turf_booking/utils.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 
 
-class adminLoginScreen extends StatefulWidget {
+
+class AdminLoginScreen extends StatefulWidget {
   @override
-  State<adminLoginScreen> createState() => _adminLoginScreenState();
+  State<AdminLoginScreen> createState() => _AdminLoginScreenState();
 }
 
-class _adminLoginScreenState extends State<adminLoginScreen> {
+class _AdminLoginScreenState extends State<AdminLoginScreen> {
+
+  HandleGoogleBtnClick() {
+    //showing loder
+    Dialouges.ShowLoder(context);
+    // signInWithGoogle().then((user) async {
+    //   //hiding Loder
+    //   Navigator.pop(context);
+    //   if (user != null) {
+    //     //printing user detail
+    //     log('User : ${user.user}');
+    //     log('User Additional Info : ${user.additionalUserInfo}');
+
+    //     if (await (APIs.userExist())) {
+    //       Navigator.pushReplacement(
+    //           context, MaterialPageRoute(builder: (_) => const HomeScreen()));
+    //     } else {
+    //       APIs.createUser().then((value) {
+    //         Navigator.pushReplacement(
+    //             context, MaterialPageRoute(builder: (_) => const HomeScreen()));
+    //       });
+    //     }
+    //   }
+    // }
+    );
+  }
+
+  // Future<UserCredential?> signInWithGoogle() async {
+  //   try {
+  //     await InternetAddress.lookup('google.com');
+  //     // Trigger the authentication flow
+  //     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+  //     // Obtain the auth details from the request
+  //     final GoogleSignInAuthentication? googleAuth =
+  //         await googleUser?.authentication;
+
+  //     // Create a new credential
+  //     final credential = GoogleAuthProvider.credential(
+  //       accessToken: googleAuth?.accessToken,
+  //       idToken: googleAuth?.idToken,
+  //     );
+
+  //     // Once signed in, return the UserCredential
+  //     return await APIs.auth.signInWithCredential(credential);
+  //   } catch (e) {
+  //     log('signInWithGoogle: $e');
+  //     // ignore: use_build_context_synchronously
+  //     Dialouges.showSnackbar(
+  //         context, "Something Went Wrong Check Your Internet Connection..!");
+  //     return null;
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
